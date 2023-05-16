@@ -241,6 +241,7 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, Button } from 'react-native';
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
+import { start_ws_client } from './ws-client';
 import { getAll } from '../Service';
 import { basicUrl } from '../config';
 
@@ -366,4 +367,59 @@ function GoogleMaps() {
   );
 }
 
-export default GoogleMaps;
+function MarkerMap() {
+  const { isLoaded } = useJsApiLoader({
+    id: 'google-map-script',
+    googleMapsApiKey: 'AIzaSyBs28fQD8-yiY6leR2cAXSv9CGl5Sm4eVQ',
+  });
+
+  const containerStyle = {
+    width: '70%',
+    height: 600,
+  };
+
+  const center = {
+    lat: 31.791001,
+    lng: 34.626314,
+  };
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.mapContainer}>
+        <View style={styles.mapView}>
+          {isLoaded ? (
+            <GoogleMap
+              mapContainerStyle={containerStyle}
+              center={center}
+              zoom={16}>
+              <Markers />
+            </GoogleMap>
+          ) : (
+            <Text>Loading...</Text>
+          )}
+        </View>
+      </View>
+    </View>
+  );
+
+  function Markers() {
+    const [markers, setMarkers] = useState([
+      { id: 122, position: { lat: 31.791001, lng: 34.626314 } },
+      { id: 123, position: { lat: 31.790665, lng: 34.62589 } },
+    ]);
+
+    start_ws_client((sensor_list) => {
+      setMarkers(sensor_list);
+    });
+
+    return (
+      <React.Fragment>
+        {markers.map((marker) => (
+          <Marker key={marker.id} position={marker.position} />
+        ))}
+      </React.Fragment>
+    );
+  }
+}
+
+export default MarkerMap;
