@@ -60,6 +60,13 @@ function MarkerMap() {
   );
 
   function Markers() {
+
+    const icons = {
+      OK: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png',
+      ALERT: 'https://maps.google.com/mapfiles/ms/icons/orange-dot.png',
+      SOS: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
+    };
+
     const [markers, setMarkers] = useState([
       { id: 122, position: { lat: 31.791001, lng: 34.626314 } },
       { id: 123, position: { lat: 31.790665, lng: 34.62589 } },
@@ -72,7 +79,11 @@ function MarkerMap() {
     return (
       <React.Fragment>
         {markers.map((marker) => (
-          <Marker key={marker.id} position={marker.position} />
+          <Marker
+            key={marker.id}
+            position={marker.position}
+            icon={icons[marker.status]}
+          />
         ))}
       </React.Fragment>
     );
@@ -80,3 +91,4 @@ function MarkerMap() {
 }
 
 export default MarkerMap;
+
