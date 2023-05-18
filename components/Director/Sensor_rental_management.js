@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, TextInput, View, Text, TouchableOpacity } from 'react-native';
+import User from './User';
 
 //ניהול השכרת חיישנים
 function SensorRentalManagement({ navigation }) {
@@ -20,12 +21,58 @@ function SensorRentalManagement({ navigation }) {
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.button}
                     onPress={() => navigation.navigate('Showing_all_sensors')}>
-                    <Text style={styles.buttonText} >
-                    Showing all sensors
-                    </Text>
+                    <Text style={styles.buttonText} >Showing all sensors</Text>
                 </TouchableOpacity>
             </View>
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 20,
+    },
+    input: {
+        width: '100%',
+        height: 40,
+        borderColor: 'gray',
+        borderWidth: 1,
+        marginBottom: 10,
+        paddingLeft: 10,
+    },
+    title: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        marginTop: 50,
+        marginBottom: 30,
+    },
+    button: {
+        margin: 10,
+        padding: 20,
+        backgroundColor: 'gray',
+        borderRadius: 10,
+    },
+    buttonInput: {
+        margin: 10,
+        padding: 20,
+        backgroundColor: 'white',
+        borderRadius: 10,
+        borderColor: 'gray',
+        borderWidth: 1,
+    },
+    buttonText: {
+        color: 'white',
+        fontSize: 20,
+    },
+    text: {
+        fontSize: 30,
+        fontWeight: 'bold',
+        marginBottom: 20,
+        borderRadius: 5
+    },
+})
 export default SensorRentalManagement

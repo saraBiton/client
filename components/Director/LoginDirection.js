@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import Director from './Director';
-import { addUser } from '../Service';
-import { basicUrl } from '../config';
+import { addUser } from '../../src/Service';
+import { basicUrl } from '../../src/config';
 
 
 const LoginScreen = ({ navigation }) => {
@@ -39,7 +39,7 @@ const LoginScreen = ({ navigation }) => {
                 value={password}
                 onChangeText={setpassword}
             />
-            <TouchableOpacity style={styles.button} onPress={handleLogin}>
+            <TouchableOpacity style={styles.button} onPress={handleLogin} >
                 <Text style={styles.buttonText}>התחבר</Text>
             </TouchableOpacity>
         </View>

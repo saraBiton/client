@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import SensorActions from './Sensor_management';
-import User from './User';
 import TableData from '../table';
+import SensorRentalManagement from './Sensor_rental_management';
 
 function Director({navigation}) {
     const [activeButton, setActiveButton] = useState(null);
@@ -20,12 +20,6 @@ function Director({navigation}) {
                     onPress={() => navigation.navigate('Sensor_rental_management')}>
                     <Text style={styles.buttonText} >
                     Sensor rental management
-                    </Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.button}
-                    onPress={() => navigation.navigate('user')}>
-                    <Text style={styles.buttonText} >
-                    user
                     </Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.button}

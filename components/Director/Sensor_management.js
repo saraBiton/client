@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { StyleSheet, TextInput, View, Text, TouchableOpacity } from 'react-native';
 // import { AddSensor, DeleteSensor } from './';
-import { AddSensor } from '../Service';
-import { DeleteSensor } from '../Service';
+import { AddSensor } from '../../src/Service';
+import { DeleteSensor } from '../../src/Service';
 
 function SensorActions({ navigation }) {
     const [activeButton, setActiveButton] = useState(null);

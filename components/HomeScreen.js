@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import User from './Director/User';
 import LoginScreen from './Director/LoginDirection';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
-import MapComponent from './lifeguard/Mapocation';
-import GoogleMaps from './lifeguard/mapOfLocation';
-function HomeScreen({navigation}) {
+import MarkerMap from './lifeguard/mapOfLocation';
+
+function HomeScreen({ navigation }) {
+
     const [activeButton, setActiveButton] = useState(null);
 
     return (
@@ -17,18 +18,10 @@ function HomeScreen({navigation}) {
                     <Text style={styles.buttonText} >Director</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.button}
-                    onPress={() => navigation.navigate('mapp')}>
-                    <Text style={styles.buttonText} >map</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.button}
-                    onPress={() => navigation.navigate('lifeguard')}>
-                    <Text style={styles.buttonText} >
-                    lifeguard
-                    </Text>
+                    onPress={() => navigation.navigate('lifeguardMap')}>
+                    <Text style={styles.buttonText} >lifeguard</Text>
                 </TouchableOpacity>
             </View>
-            {/* {activeButton === 'Admin' && <Text>Admin screen</Text>} */}
-            {/* {activeButton === 'User' && <User />} */}
         </View>
     );
 }

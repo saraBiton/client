@@ -1,5 +1,3 @@
-
-
 const ws = new WebSocket('ws://localhost:8000/client-ws');
 ws.onopen = () => ws.send('start');
 

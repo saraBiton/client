@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, TextInput, Text, StyleSheet } from 'react-native';
-import { basicUrl } from '../config';
-const { addUser } = require('../Service');
+import { basicUrl } from '../../src/config';
+const { addUser } = require('../../src/Service');
 import { Button } from 'react-native';
 // const {  addUser } = require('./Service');
 
