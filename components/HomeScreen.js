@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import User from './Director/User';
 import LoginScreen from './Director/LoginDirection';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { Image, StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import MarkerMap from './lifeguard/mapOfLocation';
-
+import calculateDistance from '../try/trydis';
 function HomeScreen({ navigation }) {
-
     const [activeButton, setActiveButton] = useState(null);
-
     return (
         <View style={styles.container}>
+            <Image source={require('../assets/favicon.png')} style={styles.icon} />
+            {/* <Image source={require('../assets/image.jpg')} style={styles.icon} /> */}
+            {/* <Image source={require('../assets/logo.png')}></Image> */}
             <Text style={styles.title}> Welcome to SURF-IT </Text>
             <Text style={styles.subtitle}>Rental of drowning prevention equipment</Text>
             <View style={styles.buttonContainer}>
@@ -17,6 +18,10 @@ function HomeScreen({ navigation }) {
                     onPress={() => navigation.navigate('LoginDirection')}>
                     <Text style={styles.buttonText} >Director</Text>
                 </TouchableOpacity>
+                {/* <TouchableOpacity style={styles.button}
+                    onPress={() => navigation.navigate('AppDistance')}>
+                    <Text style={styles.buttonText} >dist</Text>
+                </TouchableOpacity> */}
                 <TouchableOpacity style={styles.button}
                     onPress={() => navigation.navigate('lifeguardMap')}>
                     <Text style={styles.buttonText} >lifeguard</Text>
@@ -27,6 +32,11 @@ function HomeScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
+    icon: {
+        width: 200,
+        height: 200,
+        alignSelf: 'center',
+    },
     container: {
         flex: 1,
         alignItems: 'center',

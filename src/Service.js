@@ -1,4 +1,5 @@
 import axios from 'axios'
+import Director from '../components/Director/Director';
 
 const getAll = (url) => axios.get(url);
 
@@ -14,6 +15,30 @@ const addUser = async (url, user) => {
         console.error(error);
     }
 }
+// const CheckPassword = async (url,userData) => {
+//     try {
+//         const response = await axios.post(`${url}`,userData);
+//         console.log(response.data);
+//     } catch (error) {
+//         console.error(error);
+//     }
+// }
+export const CheckPassword = async (url, driver) => {
+    try {
+        const response = await axios.post(`${url}`, driver);
+        console.log(response.data);
+        if (response.data == Director) {
+            return Director;
+        }
+        else if(response.data == Lifeguard){
+            return lifeguardMap;
+        }
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+// const response = await axios.post(`${url}/${userData}`);
 
 const updateItem = (url, userId, obj) => axios.patch(`${url}/${userId}`, obj);
 
