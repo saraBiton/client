@@ -11,7 +11,7 @@ import { basicUrl } from './src/config';
 import TableData from './components/table';
 import MarkerMap from './components/lifeguard/mapOfLocation';
 import SensorRentalManagement from './components/Director/Sensor_rental_management';
-import calculateDistance from './try/trydis';
+// import calculateDistance from './try/trydis';
 import AppDistance from './components/lifeguard/CalculationDistance';
 const Stack = createStackNavigator();
 

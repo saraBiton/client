@@ -3,7 +3,7 @@ import User from './Director/User';
 import LoginScreen from './Director/LoginDirection';
 import { Image, StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import MarkerMap from './lifeguard/mapOfLocation';
-import calculateDistance from '../try/trydis';
+// import calculateDistance from '../try/trydis';
 function HomeScreen({ navigation }) {
     const [activeButton, setActiveButton] = useState(null);
     return (
