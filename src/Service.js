@@ -23,16 +23,11 @@ const addUser = async (url, user) => {
 //         console.error(error);
 //     }
 // }
-export const CheckPassword = async (url, driver) => {
+export const CheckPassword = async (url, user) => {
     try {
-        const response = await axios.post(`${url}`, driver);
+        const response = await axios.post(`${url}`, user);
         console.log(response.data);
-        if (response.data == Director) {
-            return Director;
-        }
-        else if(response.data == Lifeguard){
-            return lifeguardMap;
-        }
+        return response.data;
     } catch (error) {
         console.error(error);
     }

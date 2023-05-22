@@ -8,7 +8,7 @@ function HomeScreen({ navigation }) {
     const [activeButton, setActiveButton] = useState(null);
     return (
         <View style={styles.container}>
-            <Image source={require('../assets/favicon.png')} style={styles.icon} />
+            <Image source={require('../assets/faviconlast.png')} style={styles.icon} />
             {/* <Image source={require('../assets/image.jpg')} style={styles.icon} /> */}
             {/* <Image source={require('../assets/logo.png')}></Image> */}
             <Text style={styles.title}> Welcome to SURF-IT </Text>

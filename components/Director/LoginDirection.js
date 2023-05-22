@@ -34,15 +34,15 @@ const LoginScreen = ({ navigation }) => {
   //     }
   // navigation.navigate('Director');
 
-
-  const handleLogin =  () => {
+// ridax
+  const handleLogin = async () => {
 
     const Login = {
       username: userName,
       password: password,
     };
     try {
-      const response =  CheckPassword(basicUrl + 'login/', Login);
+      const response = await CheckPassword (basicUrl + 'login/', Login);
       console.log(basicUrl + 'login/',Login);
       const collection = response.data;
       console.log(collection);

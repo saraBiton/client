@@ -53,7 +53,7 @@ function MarkerMap() {
       setMarkers(sensor_list);
 
       sensor_list.forEach(sensor => {
-        if(sensor.status === "SOS") {
+        if (sensor.status === "SOS") {
 
         }
 
